@@ -1,0 +1,355 @@
+html {
+    font-size: clamp(18px, 2.5vw, 20px);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Bubblegum Sans", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 10px; /* kis oldalsó margó mobilon */
+    background: linear-gradient(to bottom, #678166, #3a5038);
+    background-image: url(photos/background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    color: #836641;
+    text-shadow: 1px 1px 2px rgb(163, 141, 109);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120vh; /* van "tartalék" lefelé */
+    
+    background-image: url("photos/background.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    z-index: -1;
+    will-change: transform;
+}
+
+.content {
+    min-height: 200vh; /* csak hogy legyen scroll */
+}
+
+main, .description, .developers, .privacy {
+    margin: 0 auto;
+}
+
+/* =======================
+   HEADER
+======================= */
+header .logo {
+    width: 500px;
+    max-width: 80vw; /* kisebb képernyőkön arányosan csökken */
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+.logo {
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* =======================
+   SOCIAL IKONOK
+======================= */
+.socials {
+    display: flex;
+    flex-wrap: wrap; /* kis képernyőn több sorba törik */
+    gap: 30px;
+    justify-content: center;
+    margin: 20px auto 30px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.socials img {
+    width: 37px;
+    height: 37px;
+
+    filter:
+        invert(33%)
+        sepia(28%)
+        saturate(400%)
+        hue-rotate(80deg)
+        brightness(100%)
+        contrast(80%);
+
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.socials img:hover {
+    transform: scale(1.2);
+    filter: invert(80%) sepia(30%) hue-rotate(60deg);
+}
+
+/* =======================
+   LEÍRÁS
+======================= */
+.description {
+    color: #836641;
+    max-width: 900px;
+    padding: 20px;
+    background:linear-gradient(to bottom, #eae5bb, #c5accf);
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.privacy {
+    text-align: left;
+    color: #836641;
+    max-width: 900px;
+    padding: 20px;
+    background:linear-gradient(to bottom, #eae5bb, #c5accf);
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.priv-label {
+    font-weight: bold;
+}
+
+h1, h2 {
+    color: cornsilk;
+    text-shadow: 3px 1px 3px rgb(78, 68, 47);
+}
+
+.description h1,
+.description h2,
+.developers h1,
+.developers h2 {
+    color: #4e654c;
+    text-shadow: 3px 1px 3px rgb(172, 150, 102);
+}
+
+.privacyh1 {
+    text-align: center;
+    color: #41513e;
+    text-shadow: 2px 1px 5px rgba(0,0,0,0.2);
+}
+
+ul {
+    text-align: left;
+    display: inline-block;
+}
+
+/* =======================
+   TRAILER
+======================= */
+.trailer iframe {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9; /* automatikus méret */
+    height: auto;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* =======================
+   SCREENSHOTS
+======================= */
+.screenshots {
+    max-width: 1000px;
+    margin-bottom: 50px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* =======================
+   FEJLESZTŐK
+======================= */
+.developers {
+    background: linear-gradient(to bottom, #c8b3d3, #eae5bb);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 900px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dev-logo {
+    width: 250px;
+    max-width: 80vw;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.publisher-logo {
+    width: 150px;
+    max-width: 80vw;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.dev-pics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.dev-card img {
+    width: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.dev-card img:hover {
+    transform: scale(1.1);
+}
+
+.dev-card p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.dev-logo:hover {
+    transform: scale(1.1);
+}
+
+.publisher-logo:hover {
+    transform: scale(1.1);
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+    width: 100%;
+    background: linear-gradient(to bottom, #2e3a2c, #181e17) ;
+    color: #f3f0e8;
+    padding: 20px 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #f3f0e8;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #c1d8a9;
+}
+
+/* =======================
+   RESZPONZIVITÁS
+======================= */
+
+/* Tablet nézet (max 900px) */
+@media (max-width: 900px) {
+    .description, .developers, .privacy {
+        padding: 15px;
+    }
+
+    .dev-card img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Mobil nézet (max 600px) */
+@media (max-width: 600px) {
+    header .logo {
+        width: 220px;
+    }
+
+    .socials img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* egy oszlop */
+    }
+
+    .dev-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    footer {
+        font-size: 0.9em;
+        padding: 15px 0;
+    }
+}
+
+/* =======================
+   LIGHTBOX (Képnagyítás)
+======================= */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 85%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    transition: transform 0.3s ease;
+}
+
+.lightbox img:hover {
+    transform: scale(1.02);
+}
